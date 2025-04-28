@@ -430,6 +430,10 @@ MonoBehaviour:
   dirtParticle: {fileID: 835312458}
   jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
+  canDoubleJump: 1
+  dash: 2
+  isDashing: 0
+  doubleSpeed: 0
 --- !u!65 &545658801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -857,6 +861,51 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 545658805}
   m_SourcePrefab: {fileID: 100100000, guid: c14bb5ce28dbb7442a2f79d8b6a061ce, type: 3}
+--- !u!1 &1552569819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552569821}
+  - component: {fileID: 1552569820}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552569820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552569819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ee2aeb09ab5ee4e875c0033c31d62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!4 &1552569821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552569819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.89713, y: 0.9583446, z: -0.9873147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1715899443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -947,7 +996,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fb8edecbfd0c249b3cdfa6df7e7a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 7513107126711682560, guid: 1b42c2ce5a8eef046a411a84fd4240cd, type: 3}
+  obstaclePrefabs:
+  - {fileID: 7513107126711682560, guid: 1b42c2ce5a8eef046a411a84fd4240cd, type: 3}
+  - {fileID: 3563010012311253783, guid: bc8db34d695e4354bb2bb8c55c0b2258, type: 3}
+  - {fileID: 4621781143552919446, guid: bb4131c87b826ef47a7859f08a1cc4df, type: 3}
 --- !u!4 &1967873586
 Transform:
   m_ObjectHideFlags: 0
@@ -1088,3 +1140,4 @@ SceneRoots:
   - {fileID: 835818921}
   - {fileID: 1521965629}
   - {fileID: 1967873586}
+  - {fileID: 1552569821}
