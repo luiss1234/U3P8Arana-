@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody playerRb;
+    public Rigidbody playerRb;
     public float jumpForce = 10;
+    public float floatForce;
+    
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
@@ -65,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * floatForce * Time.deltaTime, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
